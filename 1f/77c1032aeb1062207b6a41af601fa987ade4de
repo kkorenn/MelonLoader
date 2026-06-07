@@ -1,0 +1,61 @@
+MelonLoader/MelonUtils.cs
+  s_d5ee4f5ce9cc97::t_c9995fd21de56e 88-91,93-98
+  s_d5ee4f5ce9cc97::t_7f8ad66d5c4a0a 92
+MelonLoader/Utils/MelonEnvironment.cs
+  s_d5ee4f5ce9cc97::t_8f24543741c18e 22,55-67,83-86,98
+  s_d5ee4f5ce9cc97::t_fd43f65f6c13ae 68-82
+MelonLoader/Core.cs
+  s_d5ee4f5ce9cc97::t_816c4fc5a26370 63-68
+  s_d5ee4f5ce9cc97::t_cd8fe112c2875f 62,69,71
+MelonLoader.Bootstrap/MelonLoader.Bootstrap.csproj
+  s_4010e760572b39::t_9b5e6910a0165d 48,51
+  s_d5ee4f5ce9cc97::t_4039bd4722a823 52,124
+  s_4010e760572b39::t_6fcba1708bad30 49-50
+  s_4010e760572b39::t_8b5272cf1d8228 118-123,125-126
+MelonLoader.Bootstrap/osxexports.def
+  s_4010e760572b39::t_f0648debfba654 13
+MelonLoader.Bootstrap/OSXEntry/osxentry.cpp
+  s_4010e760572b39::t_84e0e3794dcb2a 2,11,14,29,34-40,79-80,86-88
+  s_d5ee4f5ce9cc97::t_389b0a83bb4601 4-5,13,49-68
+  s_4010e760572b39::t_613baee5f16924 3,30-33,71-74,81-85
+  s_4010e760572b39::t_46a41855a66e70 12,41-48,69-70,75-78
+MelonLoader.Bootstrap/ModuleSymbolRedirect.cs
+  s_4010e760572b39::t_0c33ad2fddfe1c 99-130
+  s_4010e760572b39::t_954eecae90bae1 34
+  s_4010e760572b39::t_fad213f549fc05 143-146
+  s_4010e760572b39::t_a2351414528701 61,63-66
+  s_4010e760572b39::t_08b3481c723bf1 138-142
+  s_4010e760572b39::t_d4633485a91338 4
+  s_4010e760572b39::t_43623f280ee785 28-33,35
+MelonLoader.Bootstrap/OSXEntry/melonloader-launch.sh
+  s_d5ee4f5ce9cc97::t_aaf14831e37296 38-52,60-101,145
+  s_d5ee4f5ce9cc97::t_d226ae462a8bb3 53-59
+Directory.Build.props
+  s_4010e760572b39::t_2bee98d4d4778a 30
+  s_d5ee4f5ce9cc97::t_18e8df254d9603 112-114
+  s_4010e760572b39::t_8193a54689f3e3 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "1f77c1032aeb1062207b6a41af601fa987ade4de",
+  "prompts": {},
+  "sessions": {
+    "s_4010e760572b39": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9554a92-1bf4-4579-9f1f-45174cc56949",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    },
+    "s_d5ee4f5ce9cc97": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9fd4-90e2-77f0-b9c9-61f70a9fa24b",
+        "model": "gpt-5.5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
