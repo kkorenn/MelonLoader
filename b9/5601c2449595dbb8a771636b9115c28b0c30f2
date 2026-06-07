@@ -1,0 +1,21 @@
+MelonLoader/Core.cs
+  s_d5ee4f5ce9cc97::t_fad9490859eabf 63-64
+MelonLoader/Fixes/MonoMod/MacOSArm64NativeDetourPlatform.cs
+  s_d5ee4f5ce9cc97::t_fad9490859eabf 1-208
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "b95601c2449595dbb8a771636b9115c28b0c30f2",
+  "prompts": {},
+  "sessions": {
+    "s_d5ee4f5ce9cc97": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9fd4-90e2-77f0-b9c9-61f70a9fa24b",
+        "model": "gpt-5.5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
