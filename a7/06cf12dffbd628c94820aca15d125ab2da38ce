@@ -1,0 +1,21 @@
+.github/workflows/compile_macos.yml
+  s_d5ee4f5ce9cc97::t_cbe5cc7d49c9e7 13,15-22,31,33,35,37,41-42,44-45,47,50-51
+.github/workflows/upload_github.yml
+  s_d5ee4f5ce9cc97::t_cbe5cc7d49c9e7 57-66,85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "a706cf12dffbd628c94820aca15d125ab2da38ce",
+  "prompts": {},
+  "sessions": {
+    "s_d5ee4f5ce9cc97": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9fd4-90e2-77f0-b9c9-61f70a9fa24b",
+        "model": "gpt-5.5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
