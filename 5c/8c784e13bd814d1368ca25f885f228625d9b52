@@ -1,0 +1,23 @@
+.github/workflows/upload_all.yml
+  s_d5ee4f5ce9cc97::t_d248406d580da3 23-24,42
+.github/workflows/release.yml
+  s_d5ee4f5ce9cc97::t_d248406d580da3 10-12,42-43,51
+.github/workflows/upload_github.yml
+  s_d5ee4f5ce9cc97::t_d248406d580da3 15-16,80-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "5c8c784e13bd814d1368ca25f885f228625d9b52",
+  "prompts": {},
+  "sessions": {
+    "s_d5ee4f5ce9cc97": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9fd4-90e2-77f0-b9c9-61f70a9fa24b",
+        "model": "gpt-5.5"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
