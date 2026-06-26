@@ -39,6 +39,39 @@ shell_quote() {
     printf "'%s'" "$(printf "%s" "$1" | sed "s/'/'\\\\''/g")"
 }
 
+# macOS 13+ on Apple Silicon (and increasingly strict in macOS 26/27 betas)
+# enforces a bundle's code-signature seal at exec time. If the .app was modified
+# after it was signed -- an installer replacing the inner binary, or dropping
+# backup files like <Game>.real / *.bak / *.nativeumm_backup next to it -- the
+# sealed-resources hash no longer matches and the kernel refuses to exec the
+# binary. Steam surfaces this as a generic "OS Error 0" launch failure.
+#
+# Separately, even a perfectly valid hardened-runtime seal with Library
+# Validation will reject our DYLD_INSERT_LIBRARIES injection of an unsigned
+# bootstrap dylib.
+#
+# Ad-hoc re-signing the bundle solves both: it re-seals whatever is currently on
+# disk (so `codesign --verify` passes again), and because we sign WITHOUT the
+# runtime option it strips hardened runtime + Library Validation so the bootstrap
+# can be inserted. This only runs when the seal is actually broken or a hardened
+# runtime is present, so a clean, injectable bundle is left untouched.
+ensure_bundle_signature() {
+    command -v codesign >/dev/null 2>&1 || return 0
+
+    local needs_resign=0
+    if ! codesign --verify --strict "$APP" >/dev/null 2>&1; then
+        needs_resign=1 # broken seal: kernel refuses exec on Apple Silicon
+    elif codesign --display --verbose=2 "$BINARY" 2>&1 | grep -q "flags=.*runtime"; then
+        needs_resign=1 # hardened runtime would block DYLD injection
+    fi
+
+    [ "$needs_resign" -eq 1 ] || return 0
+
+    echo "melonloader-launch: ad-hoc re-signing $APP (broken seal or hardened runtime)" >&2
+    codesign --force --deep --sign - "$APP" >/dev/null 2>&1 \
+        || echo "melonloader-launch: ad-hoc re-sign failed; the game may fail to launch on Apple Silicon" >&2
+}
+
 open_melonloader_terminal() {
     if [ "${MELONLOADER_NO_TERMINAL:-0}" = "1" ]; then
         return
@@ -128,6 +161,10 @@ if [ -d "${1:-}" ] && [ "${1%.app}" != "$1" ]; then
         set -- "$BINARY" "$@"
     fi
 fi
+
+# Repair a broken/hardened bundle seal before exec so macOS will launch it and
+# allow injection. No-op when the bundle is already clean and injectable.
+ensure_bundle_signature
 
 # Both the dylib and the managed MelonLoader/ folder live in SCRIPT_DIR
 # alongside the .app; point DYLD_LIBRARY_PATH there so the managed side's
