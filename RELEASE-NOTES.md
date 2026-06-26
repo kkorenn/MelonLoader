@@ -31,6 +31,7 @@
 * Fixed Il2CppICallInjector to ignore shim methods that use GetPinnableReference
 * Fixed an issue with MacOS Bootstrap not having the needed ``__interpose``   [[#1138](<https://github.com/LavaGang/MelonLoader/pull/1138>)]
 * Added a Launch Script for easier MacOS installation   [[#1138](<https://github.com/LavaGang/MelonLoader/pull/1138>)]
+* Fixed MacOS launch failures on Apple Silicon (``OS Error 0``) by ad-hoc re-signing game bundles with a broken code-signature seal or hardened runtime in the launch script
 * Fixed an issue with Il2CppICallInjector not handling complete Method Signatures
 * Fixed UnityEngine.Il2CppImageConversionManager to support Unity 6000+   [[#1144](<https://github.com/LavaGang/MelonLoader/pull/1144>)]
 * Improved .NET Portable Directory loading
