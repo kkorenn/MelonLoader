@@ -1,0 +1,22 @@
+MelonLoader.Bootstrap/OSXEntry/melonloader-launch.sh
+  s_27fde9115c9327::t_4efad9f5399b1a 42-74
+  s_27fde9115c9327::t_c4094fd8b5357a 165-168
+RELEASE-NOTES.md
+  s_27fde9115c9327::t_352bab9d0cf120 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "e2eadd5b5cc41f077f5f3cc3d5956b0aa87f93f7",
+  "prompts": {},
+  "sessions": {
+    "s_27fde9115c9327": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "23334e7d-50a4-4d5a-a71b-371b3284324b",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "koren <131921956+kkorenn@users.noreply.github.com>"
+    }
+  }
+}
